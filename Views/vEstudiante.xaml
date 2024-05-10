@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="jchusinS6.Views.vEstudiante"
+             Title="vEstudiante">
+    <VerticalStackLayout>
+        <Label 
+            Text="CONSUMO DE REST"
+            FontSize="24"
+            HorizontalTextAlignment="Center"/>
+
+        <ListView x:Name="listaEstudiantes" HasUnevenRows="True">
+            <ListView.Header>
+                <Grid Padding="10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="Código" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Text="Apellido" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="3" Text="Edad" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Text="{Binding codigo}" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Column="1" Text="{Binding nombre}" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Column="2" Text="{Binding apellido}" HorizontalTextAlignment="Center"/>
+                            <Label Grid.Column="3" Text="{Binding edad}" HorizontalTextAlignment="Center"/>
+
+                            <!-- Líneas divisorias -->
+                            <BoxView Grid.ColumnSpan="4" HeightRequest="1" BackgroundColor="Gray" VerticalOptions="End"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
