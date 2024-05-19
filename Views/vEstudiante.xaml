@@ -3,13 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="jchusinS6.Views.vEstudiante"
              Title="vEstudiante">
-    <VerticalStackLayout>
+    <VerticalStackLayout Spacing="25">
         <Label 
             Text="CONSUMO DE REST"
             FontSize="24"
             HorizontalTextAlignment="Center"/>
 
-        <ListView x:Name="listaEstudiantes" HasUnevenRows="True">
+        <ListView x:Name="listaEstudiantes" HasUnevenRows="True" ItemSelected="listaEstudiantes_ItemSelected">
             <ListView.Header>
                 <Grid Padding="10">
                     <Grid.ColumnDefinitions>
@@ -19,10 +19,10 @@
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
 
-                    <Label Grid.Column="0" Text="Código" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="1" Text="Nombre" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="2" Text="Apellido" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
-                    <Label Grid.Column="3" Text="Edad" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="0" Text="Código" TextColor="Red" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="1" Text="Nombre" TextColor="Red" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="2" Text="Apellido" TextColor="Red" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+                    <Label Grid.Column="3" Text="Edad" TextColor="Red" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
                 </Grid>
             </ListView.Header>
             <ListView.ItemTemplate>
@@ -48,5 +48,10 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Button x:Name="btnAgregar"
+                Text="Agregar Estudiante"
+                Clicked="btnAgregar_Clicked" />
+        
     </VerticalStackLayout>
 </ContentPage>
